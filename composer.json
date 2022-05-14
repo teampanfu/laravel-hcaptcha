@@ -1,0 +1,45 @@
+{
+    "name": "teampanfu/laravel-hcaptcha",
+    "type": "library",
+    "description": "A Laravel package to display and validate hCaptcha.",
+    "keywords": ["captcha", "hcaptcha", "laravel"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Robin",
+            "email": "robin@panfu.us"
+        }
+    ],
+    "require": {
+        "php": "^7.3|^8.0",
+        "guzzlehttp/guzzle": "^6.2|^7.2"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Panfu\\Laravel\\HCaptcha\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Panfu\\Laravel\\HCaptcha\\Test\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Panfu\\Laravel\\HCaptcha\\HCaptchaServiceProvider"
+            ],
+            "aliases": {
+                "HCaptcha": "Panfu\\Laravel\\HCaptcha\\Facades\\HCaptcha"
+            }
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
