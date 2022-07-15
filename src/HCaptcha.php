@@ -71,6 +71,7 @@ class HCaptcha
      * Display a button with a hCaptcha challenge bound to it.
      *
      * @link   https://docs.hcaptcha.com/invisible
+     *
      * @param  string  $label
      * @param  array  $attributes
      * @return string
@@ -90,19 +91,19 @@ class HCaptcha
      * Load the hCaptcha javascript resource.
      *
      * @param  string|null  $locale
-     * @param  boolean  $render
+     * @param  bool  $render
      * @param  string|null  $onload
      * @param  string|null  $recaptchacompat
      * @return string
      */
     public function script($locale = null, $render = false, $onload = null, $recaptchacompat = null): string
     {
-        $data = array(
+        $data = [
             'onload' => $onload,
             'render' => $render ? 'explicit' : null,
             'hl' => $locale,
             'recaptchacompat' => $recaptchacompat ? 'on' : null,
-        );
+        ];
 
         $parameters = http_build_query($data);
 
@@ -114,7 +115,7 @@ class HCaptcha
      *
      * @param  string  $token
      * @param  string|null  $remoteip
-     * @return boolean
+     * @return bool
      */
     public function validate($token, $remoteip = null): bool
     {
@@ -139,6 +140,7 @@ class HCaptcha
 
         if (isset($data->success) && $data->success === true) {
             $this->verifiedResponses[] = $token;
+
             return true;
         } else {
             return false;
@@ -153,7 +155,7 @@ class HCaptcha
      */
     protected function buildAttributes(array $attributes): string
     {
-        $html = array();
+        $html = [];
 
         foreach ($attributes as $key => $value) {
             $html[] = $key.'="'.$value.'"';
@@ -165,15 +167,15 @@ class HCaptcha
     /**
      * Prepare the attributes and apply the defaults.
      *
-     * @param  array $attributes
+     * @param  array  $attributes
      * @return array
      */
     protected function prepareAttributes(array $attributes = []): array
     {
-        $defaults = array(
+        $defaults = [
             'class' => 'h-captcha',
             'data-sitekey' => $this->sitekey,
-        );
+        ];
 
         // If the class attribute is present, expand it to the default value.
         if (isset($attributes['class']) && ! empty($attributes['class'])) {
