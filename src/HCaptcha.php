@@ -44,6 +44,8 @@ class HCaptcha
     /**
      * Create a new HCaptcha instance.
      *
+     * @param  string  $sitekey
+     * @param  string  $secret
      * @return void
      */
     public function __construct($sitekey, $secret)
