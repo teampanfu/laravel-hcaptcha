@@ -52,8 +52,20 @@ class HCaptcha
     {
         $this->sitekey = $sitekey;
         $this->secret = $secret;
+    }
 
-        $this->client = new Client();
+    /**
+     * Get the Guzzle client.
+     *
+     * @return \GuzzleHttp\Client
+     */
+    public function getClient(): Client
+    {
+        if (! $this->client) {
+            $this->client = new Client();
+        }
+
+        return $this->client;
     }
 
     /**
@@ -130,7 +142,7 @@ class HCaptcha
             return true;
         }
 
-        $response = $this->client->request('POST', self::VERIFY_URL, [
+        $response = $this->getClient()->request('POST', self::VERIFY_URL, [
             'form_params' => [
                 'secret' => $this->secret,
                 'response' => $token,
