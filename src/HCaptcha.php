@@ -93,6 +93,10 @@ class HCaptcha
      */
     public function script(?string $locale = null, bool $render = false, ?string $onload = null, ?string $recaptchacompat = null): string
     {
+        if (is_null($locale) && function_exists('app')) {
+            $locale = app()->getLocale();
+        }
+
         $data = [
             'onload' => $onload,
             'render' => $render ? 'explicit' : null,
