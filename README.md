@@ -3,18 +3,10 @@
 [![Visit hCaptcha.com](https://user-images.githubusercontent.com/59781900/163660320-8209d05d-c7ed-40f3-831b-3dde16904014.png)](https://www.hcaptcha.com/)
 
 [![Latest Version](https://img.shields.io/github/release/teampanfu/laravel-hcaptcha.svg?style=flat-square)](https://github.com/teampanfu/laravel-hcaptcha/releases)
-[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
 [![Total Downloads](https://img.shields.io/packagist/dt/teampanfu/laravel-hcaptcha.svg?style=flat-square)](https://packagist.org/packages/teampanfu/laravel-hcaptcha)
+[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
 
 A package specifically designed to include [hCaptcha](https://www.hcaptcha.com) directly into [Laravel](https://laravel.com).
-
-## Why hCaptcha?
-
-hCaptcha is a healthy alternative to reCAPTCHA with more focus on privacy and effective challenges to detect robots.
-
-Well-known companies like Discord and Cloudflare have already switched to it.
-
-It is free and easy to migrate.
 
 ## Installation
 
