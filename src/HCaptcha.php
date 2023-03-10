@@ -43,12 +43,8 @@ class HCaptcha
 
     /**
      * Create a new HCaptcha instance.
-     *
-     * @param  string  $sitekey
-     * @param  string  $secret
-     * @return void
      */
-    public function __construct($sitekey, $secret)
+    public function __construct(string $sitekey, string $secret)
     {
         $this->sitekey = $sitekey;
         $this->secret = $secret;
@@ -56,8 +52,6 @@ class HCaptcha
 
     /**
      * Get the Guzzle client.
-     *
-     * @return \GuzzleHttp\Client
      */
     public function getClient(): Client
     {
@@ -70,9 +64,6 @@ class HCaptcha
 
     /**
      * Display the hCaptcha widget.
-     *
-     * @param  array  $attributes
-     * @return string
      */
     public function display(array $attributes = []): string
     {
@@ -84,13 +75,9 @@ class HCaptcha
     /**
      * Display a button with a hCaptcha challenge bound to it.
      *
-     * @link   https://docs.hcaptcha.com/invisible
-     *
-     * @param  string  $label
-     * @param  array  $attributes
-     * @return string
+     * @link https://docs.hcaptcha.com/invisible
      */
-    public function displayButton($label = 'Submit', array $attributes = []): string
+    public function displayButton(string $label = 'Submit', array $attributes = []): string
     {
         if (! isset($attributes['data-callback'])) {
             $attributes['data-callback'] = 'onSubmit';
@@ -103,14 +90,8 @@ class HCaptcha
 
     /**
      * Load the hCaptcha javascript resource.
-     *
-     * @param  string|null  $locale
-     * @param  bool  $render
-     * @param  string|null  $onload
-     * @param  string|null  $recaptchacompat
-     * @return string
      */
-    public function script($locale = null, $render = false, $onload = null, $recaptchacompat = null): string
+    public function script(?string $locale = null, bool $render = false, ?string $onload = null, ?string $recaptchacompat = null): string
     {
         $data = [
             'onload' => $onload,
@@ -126,12 +107,8 @@ class HCaptcha
 
     /**
      * Validate the user response.
-     *
-     * @param  string  $token
-     * @param  string|null  $remoteip
-     * @return bool
      */
-    public function validate($token, $remoteip = null): bool
+    public function validate(string $token, ?string $remoteip = null): bool
     {
         if (empty($token)) {
             return false;
@@ -163,9 +140,6 @@ class HCaptcha
 
     /**
      * Build an HTML attribute string from an array.
-     *
-     * @param  array  $attributes
-     * @return string
      */
     protected function buildAttributes(array $attributes): string
     {
@@ -180,9 +154,6 @@ class HCaptcha
 
     /**
      * Prepare the attributes and apply the defaults.
-     *
-     * @param  array  $attributes
-     * @return array
      */
     protected function prepareAttributes(array $attributes = []): array
     {
