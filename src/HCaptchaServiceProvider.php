@@ -16,7 +16,9 @@ class HCaptchaServiceProvider extends ServiceProvider
         ]);
 
         $this->app->validator->extend('hcaptcha', function ($attribute, $value) {
-            return $this->app->hcaptcha->validate($value, request()->ip());
+            return $value
+                ? $this->app->hcaptcha->validate($value, request()->ip())
+                : false;
         });
     }
 
