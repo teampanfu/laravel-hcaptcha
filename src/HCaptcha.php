@@ -112,7 +112,7 @@ class HCaptcha
     /**
      * Validate the user response.
      */
-    public function validate(string $token, ?string $remoteip = null): bool
+    public function validate(?string $token, ?string $remoteip = null): bool
     {
         if (empty($token)) {
             return false;
