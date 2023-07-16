@@ -4,7 +4,7 @@
 
 [![Latest Version](https://img.shields.io/github/release/teampanfu/laravel-hcaptcha.svg?style=flat-square)](https://github.com/teampanfu/laravel-hcaptcha/releases)
 [![Total Downloads](https://img.shields.io/packagist/dt/teampanfu/laravel-hcaptcha.svg?style=flat-square)](https://packagist.org/packages/teampanfu/laravel-hcaptcha)
-[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
+[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE)
 
 A package specifically designed to include [hCaptcha](https://www.hcaptcha.com) directly into [Laravel](https://laravel.com).
 
