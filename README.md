@@ -104,11 +104,9 @@ To validate the hCaptcha response, use the `hcaptcha` rule:
 
 ```php
 $request->validate([
-    'h-captcha-response' => ['hcaptcha'],
+    'h-captcha-response' => ['required', 'hcaptcha'],
 ]);
 ```
-
-*You can leave out the `required` rule, because it is already checked internally.*
 
 #### Custom validation message
 
